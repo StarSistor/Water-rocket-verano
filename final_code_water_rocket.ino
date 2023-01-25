@@ -13,7 +13,7 @@ float altitud_init;//Lee altitud en metros
 
 float altura_max = 0;
 float altura;
-
+int cont = 0; //contador
 int led_rojo = 7;
 int led_azul = 8;
 int buzzer = 10;
@@ -70,17 +70,19 @@ Serial.print(altitud);
 Serial.print("m, ");
 Serial.print(altura);
 Serial.println("m, ");
-delay(150); //Pause between readings.
+delay(150); //Pause entre lecturas.
  
- 
-bmp180_Data.print(tempC);                             //write temperature data to card
+ //Escribe los datos del sensor
+bmp180_Data.print(cont+1);                             
+bmp180_Data.print(","); 
+bmp180_Data.print(tempC);                             
 bmp180_Data.print(",");  
-bmp180_Data.print(pressure);                             //write temperature data to card
+bmp180_Data.print(pressure);                             
 bmp180_Data.print(","); //write a commma
 bmp180_Data.print(altitud);  
 bmp180_Data.print(","); //write a commma
 bmp180_Data.print(altura);
-bmp180_Data.close();                                  //close the file
+bmp180_Data.close();                                  //cierra el archivo
 }
 
 
