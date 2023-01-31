@@ -81,7 +81,7 @@ bmp180_Data.print(pressure);
 bmp180_Data.print(","); //write a commma
 bmp180_Data.print(altitud);  
 bmp180_Data.print(","); //write a commma
-bmp180_Data.print(altura);
+bmp180_Data.println(altura);
 bmp180_Data.close();                                  //cierra el archivo
 }
 
